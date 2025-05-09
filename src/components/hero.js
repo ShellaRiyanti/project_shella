@@ -21,6 +21,15 @@ const Hero = () => {
             />
           </div>
         </div>
+        <div className='container'>
+            <Alert variant="warning" >
+                <Alert.Heading>Peringatan Dini Cuaca</Alert.Heading>
+                <p>
+                    Beberapa wilayah masih berpotensi terjadi hujan dengan intensitas sedang hingga lebat yang dapat disertai kilat/petir dan angin kencang pada 08 Mei 2025 pukul 21.10 WIB.
+                    Diperkirakan masih dapat berlangsung hingga 09 Mei 2025 pukul 00.31 WIB. <Alert.Link href="#">Selengkapnya >></Alert.Link>
+                </p>
+            </Alert>
+        </div>
       </div>
     );
   };

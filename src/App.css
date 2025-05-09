@@ -28,6 +28,39 @@
   color: #61dafb;
 }
 
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.hero-section {
+  background-color: #b3d8f5;
+}
+
+.breadcrumb-nav {
+  color: #6c757d;
+}
+
+.hero-title {
+  font-size: 1.75rem;
+}
+
+.search-container {
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding-top: 10px;
+}
+
+.input-group-text {
+  border-radius: 8px 0 0 8px;
+  border-right: none;
+}
+
+.form-control {
+  border-radius: 0 8px 8px 0;
+  border-left: none;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

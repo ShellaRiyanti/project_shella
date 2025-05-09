@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Navbar from './components/navbar';
+import Header from './components/header';
+import Footer from './components/footer';
+import Hero from './components/hero';
+import Cuaca from './components/cuaca';
+import { RiCustomerService2Fill } from "react-icons/ri";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          test commit shella
-          test commit mal
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Navbar />
+      <Hero />
+      <Cuaca />
+      <Footer />
+      <div className="position-fixed bottom-0 end-0 mb-4 me-4">
+        <button className="btn btn-primary rounded-circle p-3">
+        <RiCustomerService2Fill style={{width: '20px', height: '20px'}}/>
+        </button>
+      </div>
     </div>
   );
 }

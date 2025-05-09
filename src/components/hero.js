@@ -11,6 +11,16 @@ const Hero = () => {
   
         <h1 className="fw-bold hero-title mb-2">Prakiraan Cuaca Kota Cirebon</h1>
         <p className="text-muted">Prakiraan cuaca kecamatan di Kota Cirebon, Jawa Barat</p>
+  
+        <div className=" my-5">
+          <div className="input-group mx-auto" style={{ maxWidth: '600px' }}>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Cari kelurahan/desa..."
+            />
+          </div>
+        </div>
       </div>
     );
   };

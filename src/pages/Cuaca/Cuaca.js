@@ -1,6 +1,7 @@
 // src/components/Cuaca.js
 import React from 'react';
 import { Table } from "react-bootstrap"
+import Hero from '../../components/hero';
 
 // Data wilayah dan prakiraan cuaca
 const regions = [
@@ -87,6 +88,8 @@ const WeatherCard = ({ data }) => {
 // Komponen utama Cuaca
 const Cuaca = () => {
   return (
+    <>
+    <Hero/>
     <div className="my-2 mx-auto" style={{ maxWidth: '1000px', height: '750px'}}>
       <Table className="table">
         <thead className="bg-light">
@@ -101,7 +104,7 @@ const Cuaca = () => {
           {regions.filter(r => r.hasData).map((region) => (
             <tr key={region}>
               <td>
-                <a href="#" className="text-decoration-none fw-bold d-flex align-items-center justify-content-between">
+                <a href="" className="text-decoration-none fw-bold d-flex align-items-center justify-content-between">
                   {region.name}
                 </a>
               </td>
@@ -113,6 +116,7 @@ const Cuaca = () => {
         </tbody>
       </Table>
     </div>
+    </>
   );
 };
 

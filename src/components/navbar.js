@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SiAccuweather } from "react-icons/si";
 import { Link, useLocation } from 'react-router-dom';
 
@@ -12,11 +12,11 @@ function Navbar() {
   ];
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 border-bottom">
+            <nav className="navbar navbar-expand-lg navbar-light bg-white py-2 border-bottom">
                 <div className="container">
                     <Link className="navbar-brand d-flex align-items-center" to="/">
                         <div className="me-2">
-                            <SiAccuweather style={{height: '45px', width: '45px'}}/>
+                            <SiAccuweather style={{height: '40px', width: '40px'}}/>
                         </div>
                         <div>
                             <div className="fs-8 fw-bold text-uppercase">Acx Weather</div>

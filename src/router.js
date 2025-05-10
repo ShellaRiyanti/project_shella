@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import HomePage from './pages/Home/Home';
@@ -9,6 +9,7 @@ import Iklim from './pages/Iklim/Iklim';
 import Kualitas from './pages/KualitasUdara/Kualitas';
 import Profile from './pages/Profile/Profile';
 import Cuaca from './pages/Cuaca/Cuaca';
+import Header from './components/header';
 
 const AppRouter = () => {
   return (
@@ -21,6 +22,7 @@ const AppRouter = () => {
 const AppContent = () => {
   return (
     <>
+    <Header />
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

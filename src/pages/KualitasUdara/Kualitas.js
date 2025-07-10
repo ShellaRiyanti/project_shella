@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Card, Row, Col, Badge, Button, Container } from 'react-bootstrap';
+import { Alert, Card, Container, Button } from 'react-bootstrap';
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
 
 const AirCondition = () => {
@@ -37,7 +37,8 @@ const AirCondition = () => {
           <Alert variant="warning">
             <Alert.Heading>Peringatan Kualitas Udara</Alert.Heading>
             <p>
-              Beberapa wilayah mungkin memiliki kualitas udara yang berbeda dari data yang ditampilkan. <Alert.Link href="#">Selengkapnya >></Alert.Link>
+              Beberapa wilayah mungkin memiliki kualitas udara yang berbeda dari data yang ditampilkan.{" "}
+              <Button variant="link" size="sm" onClick={() => alert("Menuju detail peringatan")}>Selengkapnya &gt;&gt;</Button>
             </p>
           </Alert>
         </div>
@@ -50,6 +51,7 @@ const AirCondition = () => {
 
         <div className="position-relative">
           <button
+            aria-label="Scroll ke kiri"
             className="btn btn-light rounded-circle position-absolute start-0 top-50 translate-middle-y z-1 shadow-sm"
             style={{ marginLeft: "-15px" }}
             onClick={() => scrollCards("left")}
@@ -117,6 +119,7 @@ const AirCondition = () => {
           </div>
 
           <button
+            aria-label="Scroll ke kanan"
             className="btn btn-light rounded-circle position-absolute end-0 top-50 translate-middle-y z-1 shadow-sm"
             style={{ marginRight: "-15px" }}
             onClick={() => scrollCards("right")}
@@ -132,7 +135,7 @@ const AirCondition = () => {
         <section className="mb-4">
           <h2>Apa itu Kondisi Udara?</h2>
           <p>
-            Kondisi udara mencakup keadaan atmosfer saat ini, termasuk suhu, kelembapan, kecepatan angin, tekanan udara, dan tingkat polusi. 
+            Kondisi udara mencakup keadaan atmosfer saat ini, termasuk suhu, kelembapan, kecepatan angin, tekanan udara, dan tingkat polusi.
             Informasi ini penting untuk menilai tingkat kenyamanan dan keamanan lingkungan bagi manusia dan makhluk hidup lainnya.
           </p>
         </section>
@@ -167,7 +170,7 @@ const AirCondition = () => {
         <section className="mb-4">
           <h2>Upaya Meningkatkan Kualitas Udara</h2>
           <p>
-            Langkah seperti mengurangi emisi kendaraan, penghijauan kota, penggunaan energi bersih, dan pengelolaan sampah dapat secara signifikan 
+            Langkah seperti mengurangi emisi kendaraan, penghijauan kota, penggunaan energi bersih, dan pengelolaan sampah dapat secara signifikan
             meningkatkan kualitas udara dan mendukung kesehatan masyarakat.
           </p>
         </section>

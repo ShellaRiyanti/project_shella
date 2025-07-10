@@ -32,18 +32,36 @@ const ContactCenter = () => {
     setErrors((prev) => ({ ...prev, [e.target.name]: undefined }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
       setSubmitStatus('Submitting...');
-      setTimeout(() => {
-        setSubmitStatus('Thank you! Your message has been sent.');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      }, 1500);
+  
+      try {
+        const response = await fetch('http://localhost/projectweb/api/contact.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+  
+        const result = await response.json();
+  
+        if (response.ok) {
+          setSubmitStatus(result.message);
+          setFormData({ name: '', email: '', subject: '', message: '' });
+        } else {
+          setSubmitStatus('Gagal mengirim pesan.');
+        }
+      } catch (error) {
+        setSubmitStatus('Terjadi kesalahan: ' + error.message);
+      }
     } else {
       setSubmitStatus(null);
     }
   };
+  
 
   return (
     <div style={{ minHeight: "100vh", paddingTop: "60px" }} className='hero-section'>

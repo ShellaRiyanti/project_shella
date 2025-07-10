@@ -1,6 +1,6 @@
 // src/components/Cuaca.js
 import React from 'react';
-import { Table } from "react-bootstrap"
+import { Table, Button } from "react-bootstrap";
 import Hero from '../../components/hero';
 
 // Data wilayah dan prakiraan cuaca
@@ -89,33 +89,37 @@ const WeatherCard = ({ data }) => {
 const Cuaca = () => {
   return (
     <>
-    <Hero/>
-    <div className="my-2 mx-auto" style={{ maxWidth: '1000px', height: '750px'}}>
-      <Table className="table">
-        <thead className="bg-light">
-          <tr className="text-center">
-            <th style={{ width: '10%' }}>Kecamatan</th>
-            {Object.keys(weatherForecast).map((date, idx) => (
-              <th key={idx} style={{ width: '14%' }}>{date}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {regions.filter(r => r.hasData).map((region) => (
-            <tr key={region}>
-              <td>
-                <a href="" className="text-decoration-none fw-bold d-flex align-items-center justify-content-between">
-                  {region.name}
-                </a>
-              </td>
-              {Object.entries(weatherForecast).map(([date, data]) => (
-                <WeatherCard key={date} data={data} />
+      <Hero />
+      <div className="my-2 mx-auto" style={{ maxWidth: '1000px', height: '750px' }}>
+        <Table className="table">
+          <thead className="bg-light">
+            <tr className="text-center">
+              <th style={{ width: '10%' }}>Kecamatan</th>
+              {Object.keys(weatherForecast).map((date, idx) => (
+                <th key={idx} style={{ width: '14%' }}>{date}</th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </Table>
-    </div>
+          </thead>
+          <tbody>
+            {regions.filter(r => r.hasData).map((region) => (
+              <tr key={region.name}>
+                <td>
+                  <Button 
+                    variant="link" 
+                    className="text-decoration-none fw-bold d-flex align-items-center justify-content-between p-0"
+                    onClick={() => alert(`Detail data untuk ${region.name}`)}
+                  >
+                    {region.name}
+                  </Button>
+                </td>
+                {Object.entries(weatherForecast).map(([date, data]) => (
+                  <WeatherCard key={date} data={data} />
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
     </>
   );
 };
